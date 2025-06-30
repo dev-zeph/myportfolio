@@ -223,6 +223,31 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 }
 
+// System theme preference detection
+@media (prefers-color-scheme: dark) {
+  :root {
+    --system-theme: 'dark';
+  }
+  
+  // Default to dark mode if no explicit class is set
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: #0d1116;
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --system-theme: 'light';
+  }
+  
+  // Default to light mode if no explicit class is set
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: #f8f9fa;
+    color: #0d1116;
+  }
+}
+
 // Global responsive improvements
 * {
   box-sizing: border-box;
