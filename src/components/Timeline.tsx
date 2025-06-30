@@ -16,50 +16,50 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="2025"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Senior Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Chem-AR</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Open-source educational software development utilizing Three.js for full-stack implementation. Led team initiatives and mentored junior developers while optimizing user experience.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
+            date="2024"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Junior Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Dalhousie Consulting Association</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Developed full-stack website solution with integrated CMS architecture and enhanced user experience design.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2021 - 2021"
+            date="2024"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Sole Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Dalnotes</h4>
             <p>
-              Full-stack Development, API Development, User Experience
+              Architected open-source note repository platform for Dalhousie students with AWS S3 integration and full-stack implementation.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2020"
+            date="2024"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
+            <h3 className="vertical-timeline-element-title">Sole Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">B-ANAN</h4>
             <p>
-              Automation, Data Governance, Statistical Analysis
+              Engineered Python-based revenue forecasting platform implementing multiple time series prediction models with comprehensive data analysis capabilities.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>

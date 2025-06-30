@@ -11,7 +11,7 @@
   
 .skills-container .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
 }
   
@@ -61,6 +61,47 @@
 }
 
 @media screen {
+    // Small mobile devices (320px - 480px)
+    @media (max-width: 480px) {
+        .skills-container {
+            padding: 5% 3%;
+        }
+        
+        .skills-container .skills-grid .skill {
+            padding-bottom: 8%;
+            
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            svg {
+                font-size: 2.5em !important;
+                margin-bottom: 15px;
+            }
+        }
+
+        .flex-chips {
+            .chip-title {
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        .chip {
+            font-size: 0.7rem !important;
+            height: 22px !important;
+            margin-bottom: 5px !important;
+        }
+    }
+
+    // Mobile devices (481px - 768px)
     @media (max-width: 768px) {
         .skills-container {
             display: block;
@@ -74,12 +115,55 @@
         
         .skills-container .skills-grid .skill {
             padding-bottom: 5%;
+            
+            svg {
+                margin-bottom: 15px;
+            }
+        }
+
+        .flex-chips {
+            line-height: 1.8;
+            
+            .chip-title {
+                padding-right: 8px;
+                font-size: 0.95rem;
+            }
         }
     }
 
+    // Tablet devices (769px - 1024px)
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .skills-container {
+            padding: 5% 8%;
+        }
+
+        .skills-container .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 40px;
+        }
+
+        .skills-container .skills-grid .skill {
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    // Very small mobile devices
     @media (max-width: 567px) {
         .skills {
             font-size: 12px;
+        }
+        
+        .skills-container h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 30px;
         }
     }
 }

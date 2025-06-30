@@ -1,15 +1,39 @@
+// Fira Mono Font Classes
+.fira-mono-regular {
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-mono-medium {
+  font-family: "Fira Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fira-mono-bold {
+  font-family: "Fira Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Fira Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem !important;
+  font-weight: 400;
+  // Prevent horizontal scrolling on mobile
+  overflow-x: hidden;
+  // Better text rendering on mobile
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace !important;
+  font-family: "Fira Mono", monospace !important;
   font-size: 1rem !important;
 }
 
@@ -30,7 +54,7 @@ a:hover {
 
 p, a, h1, h2, h3, h4, h5, label, button {
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Fira Mono", monospace;
 }
 
 .navigation-bar {
@@ -39,20 +63,36 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
   button {
     font-size: 1.1rem;
-    font-family: "Lato", sans-serif;
+    font-family: "Fira Mono", monospace;
     text-transform: initial;
     padding: 6px 10px;
+    
+    // Better touch targets for mobile
+    @media (max-width: 768px) {
+      min-height: 44px; // iOS recommended touch target size
+      padding: 8px 12px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      padding: 6px 8px;
+    }
   }
 
   svg {
     cursor: pointer;
+    
+    // Better touch targets for mobile
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 }
 
 .navigation-bar-responsive {
   span, p {
     color: #0d1116;
-    font-family: "Lato", sans-serif;
+    font-family: "Fira Mono", monospace;
   }
 }
 
@@ -116,6 +156,43 @@ p, a, h1, h2, h3, h4, h5, label, button {
     background-image: url("./assets/images/bg-light.png");
   }
 
+  .brain-icon {
+    color: #0d1116 !important; // Black in light mode
+  }
+
+  // Light mode styling for bio summary
+  .bio-summary {
+    p {
+      code {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        border: none;
+        box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
+
+  // Light mode styling for expertise chips
+  .chip {
+    background-color: rgba(80, 0, 202, 0.15) !important;
+    color: #3d0096 !important;
+    border-color: rgba(80, 0, 202, 0.3) !important;
+    
+    span {
+      color: #3d0096 !important;
+    }
+  }
+
+  .flex-chips .MuiChip-outlined {
+    background-color: rgba(80, 0, 202, 0.15) !important;
+    color: #3d0096 !important;
+    border-color: rgba(80, 0, 202, 0.3) !important;
+    
+    span {
+      color: #3d0096 !important;
+    }
+  }
+
   .skills-container svg {
     color: #0d1116;
   }
@@ -146,10 +223,104 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 }
 
-@media screen {
-  @media (max-width: 768px) {
-    .items-container {
-      padding: 5% 5%;
+// Global responsive improvements
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  // Prevent horizontal scrolling on mobile
+  overflow-x: hidden;
+}
+
+body {
+  // Prevent horizontal scrolling on mobile
+  overflow-x: hidden;
+  // Better text rendering on mobile
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+// Improve image loading and prevent layout shifts
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Ensure buttons are accessible on touch devices
+button, a {
+  min-height: 44px; // iOS recommended touch target size
+  min-width: 44px;
+}
+
+// Better focus states for accessibility
+button:focus, a:focus, input:focus, textarea:focus {
+  outline: 2px solid #5000ca;
+  outline-offset: 2px;
+}
+
+// Prevent zoom on iOS when focusing inputs
+input, textarea, select {
+  font-size: 16px; // Prevents zoom on iOS
+}
+
+@media (max-width: 480px) {
+  // Ensure text is readable on small screens
+  p, span, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+// Small mobile devices (320px - 480px)
+@media (max-width: 480px) {
+  .items-container {
+    padding: 5% 3%;
+  }
+  
+  body {
+    font-size: 1rem !important;
+  }
+  
+  .container {
+    margin-top: 56px; // Smaller margin for mobile
+  }
+}
+
+// Tablet and mobile devices (481px - 768px)
+@media (max-width: 768px) {
+  .items-container {
+    padding: 5% 5%;
+  }
+  
+  .navigation-bar {
+    button {
+      font-size: 1rem;
+      padding: 4px 8px;
     }
+  }
+}
+
+// Tablet devices (769px - 1024px)
+@media (min-width: 769px) and (max-width: 1024px) {
+  .items-container {
+    padding: 5% 8%;
+  }
+}
+
+// Ensure content doesn't get too wide on very large screens
+@media (min-width: 1400px) {
+  .items-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 0;
+  }
+  
+  .about-section {
+    max-width: 1400px;
+    margin: 0 auto;
   }
 }
