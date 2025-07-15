@@ -40,14 +40,8 @@ function Main() {
 
   // Define the title sequence
   const titleSequence = [
-    { text: 'S', delay: 150 },
-    { text: 'o', delay: 120 },
-    { text: 'f', delay: 100 },
-    { text: 't', delay: 120 },
-    { text: 'w', delay: 100 },
-    { text: 'a', delay: 120 },
-    { text: 'r', delay: 100 },
-    { text: 'e', delay: 120 },
+    { text: 'A', delay: 150 },
+    { text: 'I', delay: 120 },
     { text: ' ', delay: 200 },
     { text: 'E', delay: 150 },
     { text: 'n', delay: 120 },
@@ -57,6 +51,26 @@ function Main() {
     { text: 'e', delay: 120 },
     { text: 'e', delay: 100 },
     { text: 'r', delay: 120 },
+    { text: '/', delay: 200 },
+    { text: 'S', delay: 150 },
+    { text: 'o', delay: 120 },
+    { text: 'l', delay: 100 },
+    { text: 'u', delay: 120 },
+    { text: 't', delay: 100 },
+    { text: 'i', delay: 120 },
+    { text: 'o', delay: 100 },
+    { text: 'n', delay: 120 },
+    { text: 's', delay: 100 },
+    { text: ' ', delay: 200 },
+    { text: 'A', delay: 150 },
+    { text: 'r', delay: 120 },
+    { text: 'c', delay: 100 },
+    { text: 'h', delay: 120 },
+    { text: 'i', delay: 100 },
+    { text: 't', delay: 120 },
+    { text: 'e', delay: 100 },
+    { text: 'c', delay: 120 },
+    { text: 't', delay: 100 },
     { text: '.', delay: 200 },
   ];
 
@@ -163,7 +177,7 @@ function Main() {
 
           <div className="bio-summary">
             <p>
-              I am an aspiring software engineer with hands on experience in full-stack web development,database management, and Artificial Intelligence. <br/> 
+              I design and build AI based systems that help business and communities solve problems. <br/>
               <em>Beyond engineering,</em> I am driven by a deep commitment to humanitarian causes and 
               my long term goal is to leverage my career in software development to expand the reach of non-profit initiatives I lead.
             </p>

@@ -64,4 +64,3 @@ npm run build
 
 ---
 
-*Building technology solutions that make a positive impact on communities.*

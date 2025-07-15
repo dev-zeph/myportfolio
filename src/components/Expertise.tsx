@@ -87,7 +87,7 @@ function Expertise() {
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
                     <h3>GenAI & LLM</h3>
-                    <p>Developers Stay relevant in the market by leveraging AI in development. I have professional experience building enterprise grade GenAI-enabled solutions.</p>
+                    <p> I have professional experience building enterprise grade GenAI-enabled solutions.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
