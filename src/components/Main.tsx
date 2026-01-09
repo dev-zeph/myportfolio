@@ -185,7 +185,7 @@ function Main() {
 
           <div className="bio-summary">
             <p>
-              I design and build software that help business and communities solve problems. <br/>
+              I design and build software that helps businesses and communities solve problems. <br/>
               <em>Beyond engineering,</em> I am deeply committed to humanitarian causes, and I write occasionally.<br/> My long-term goal is to use my software development skills to amplify the impact of the non-profit initiatives I lead.
             </p>
           </div>
