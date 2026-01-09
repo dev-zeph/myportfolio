@@ -4,7 +4,10 @@ import mock07 from '../assets/images/Dalnotes.png';
 import mock08 from '../assets/images/B-ANAN.png';
 import mock09 from '../assets/images/DCA.png';
 import mock10 from '../assets/images/CHEM-AR.png';
+import DMLS from '../assets/images/DMLS.png';
+import Collana from '../assets/images/Collana.png';
 import '../assets/styles/Project.scss';
+
 
 function Project() {
     return(
@@ -12,9 +15,19 @@ function Project() {
         <h1>Selection of My Work</h1>
         <div className="projects-grid">
             <div className="project">
+                <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><img src={Collana} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><h2>Collana</h2></a>
+                <p>Founded Collana, a platform designed for students to find valuable internships and co-op opportunities. Leading a team of developers to build and scale the platform using React and Node.js.</p>
+            </div>
+            <div className="project">
                 <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><h2>CHEM AR</h2></a>
-                <p>Developed as Senior Developer, delivering a web application for virtual molecular visualization. Currently used by Professors at Dalhousie University.</p>
+                <p>Led the development team delivering a web application for virtual molecular visualization. Currently used by Professors at Dalhousie University.</p>
+            </div>
+            <div className="project">
+                <a href="https://dmls-website.vercel.app/" target="_blank" rel="noreferrer"><img src={DMLS} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://dmls-website.vercel.app/" target="_blank" rel="noreferrer"><h2>Dalhousie Machine Learning Society</h2></a>
+                <p>Singlehandedly redesigned and developed the Dalhousie Machine Learning Society's website, implementing MPA architecture with asynchronous dashboard for content management.</p>
             </div>
             <div className="project">
                 <a href="https://www.dalhousieconsultingassociation.ca/home" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>

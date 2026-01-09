@@ -40,9 +40,29 @@ function Main() {
 
   // Define the title sequence
   const titleSequence = [
-    { text: 'A', delay: 150 },
-    { text: 'I', delay: 120 },
-    { text: ' ', delay: 200 },
+    { text: 'H', delay: 150 },
+    { text: 'u', delay: 120 },
+    { text: 'm', delay: 100 },
+    { text: 'a', delay: 120 },
+    { text: 'n', delay: 100 },
+    { text: 'i', delay: 120 },
+    { text: 't', delay: 100 },
+    { text: 'a', delay: 120 },
+    { text: 'r', delay: 100 },
+    { text: 'i', delay: 120 },
+    { text: 'a', delay: 100 },
+    { text: 'n', delay: 120 },
+    { text: ',', delay: 200 },
+    { text: ' ', delay: 150 },
+    { text: 'S', delay: 150 },
+    { text: 'o', delay: 120 },
+    { text: 'f', delay: 100 },
+    { text: 't', delay: 120 },
+    { text: 'w', delay: 100 },
+    { text: 'a', delay: 120 },
+    { text: 'r', delay: 100 },
+    { text: 'e', delay: 120 },
+    { text: ' ', delay: 150 },
     { text: 'E', delay: 150 },
     { text: 'n', delay: 120 },
     { text: 'g', delay: 100 },
@@ -51,26 +71,14 @@ function Main() {
     { text: 'e', delay: 120 },
     { text: 'e', delay: 100 },
     { text: 'r', delay: 120 },
-    { text: '/', delay: 200 },
-    { text: 'S', delay: 150 },
-    { text: 'o', delay: 120 },
-    { text: 'l', delay: 100 },
-    { text: 'u', delay: 120 },
-    { text: 't', delay: 100 },
-    { text: 'i', delay: 120 },
-    { text: 'o', delay: 100 },
-    { text: 'n', delay: 120 },
-    { text: 's', delay: 100 },
-    { text: ' ', delay: 200 },
-    { text: 'A', delay: 150 },
+    { text: ',', delay: 200 },
+    { text: ' ', delay: 150 },
+    { text: 'W', delay: 150 },
     { text: 'r', delay: 120 },
-    { text: 'c', delay: 100 },
-    { text: 'h', delay: 120 },
     { text: 'i', delay: 100 },
     { text: 't', delay: 120 },
     { text: 'e', delay: 100 },
-    { text: 'c', delay: 120 },
-    { text: 't', delay: 100 },
+    { text: 'r', delay: 120 },
     { text: '.', delay: 200 },
   ];
 
@@ -156,7 +164,7 @@ function Main() {
           <div className="main-content">
             <div className="social_icons">
               <a href="https://github.com/dev-zeph" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-              <a href="www.linkedin.com/in/chizulu-zephaniah-906582308" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+              <a href="https://www.linkedin.com/in/chizulu-zephaniah-906582308" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
             </div>
             <h1 className="typewriter-container">
               <span className="typewriter-text">{displayedName}</span>
@@ -177,9 +185,8 @@ function Main() {
 
           <div className="bio-summary">
             <p>
-              I design and build AI based systems that help business and communities solve problems. <br/>
-              <em>Beyond engineering,</em> I am driven by a deep commitment to humanitarian causes and 
-              my long term goal is to leverage my career in software development to expand the reach of non-profit initiatives I lead.
+              I design and build software that help business and communities solve problems. <br/>
+              <em>Beyond engineering,</em> I am deeply committed to humanitarian causes, and I write occasionally.<br/> My long-term goal is to use my software development skills to amplify the impact of the non-profit initiatives I lead.
             </p>
           </div>
         </div>
