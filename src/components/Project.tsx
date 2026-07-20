@@ -15,8 +15,8 @@ function Project() {
         <h1>Selection of My Work</h1>
         <div className="projects-grid">
             <div className="project">
-                <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><img src={Collana} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://archemapp.azurewebsites.net/molecules" target="_blank" rel="noreferrer"><h2>Collana</h2></a>
+                <a href="https://www.collana.ca/" target="_blank" rel="noreferrer"><img src={Collana} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://www.collana.ca/" target="_blank" rel="noreferrer"><h2>Collana</h2></a>
                 <p>Founded Collana, a platform designed for students to find valuable internships and co-op opportunities. Leading a team of developers to build and scale the platform using React and Node.js.</p>
             </div>
             <div className="project">
