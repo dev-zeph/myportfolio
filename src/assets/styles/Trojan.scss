@@ -1,0 +1,503 @@
+// ─────────────────────────────────────────────────────────────────────────
+// Trojan design layer
+// Mirrors trojancli.com: three faces with three jobs, zero-radius boxes,
+// hairline borders, blueprint corner marks, violet accent.
+//
+//   Instrument Sans   headings + body (sentence case, tight leading)
+//   Barlow Condensed  labels only: nav, eyebrows, chips, dates
+//   JetBrains Mono    small data and notes
+//
+// Imported last from index.scss so it overrides the component styles.
+// ─────────────────────────────────────────────────────────────────────────
+
+$sans: "Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+$label: "Barlow Condensed", "Arial Narrow", sans-serif;
+$mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+// ── Tokens per mode ──────────────────────────────────────────────────────
+.main-container.dark-mode {
+  --t-bg: #0c0c0e;
+  --t-surface: #151519;
+  --t-text: #f4f4f2;
+  --t-muted: #a2a2ab;
+  --t-divider: #2a2a30;
+  --t-edge: #63636d;
+  --t-accent: #a78bfa;
+  --t-accent-solid: #7c3aed;
+  --t-accent-wash: rgba(167, 139, 250, 0.12);
+}
+
+.main-container.light-mode {
+  --t-bg: #f7f6f4;
+  --t-surface: #edeae5;
+  --t-text: #17171a;
+  --t-muted: #56565e;
+  --t-divider: #dcdad5;
+  --t-edge: #8a8a92;
+  --t-accent: #7c3aed;
+  --t-accent-solid: #7c3aed;
+  --t-accent-wash: #f1ebfe;
+}
+
+// ── Base type ────────────────────────────────────────────────────────────
+body,
+.main-container,
+.main-container p,
+.main-container a,
+.main-container label,
+.main-container button,
+.main-container input,
+.main-container textarea,
+.navigation-bar-responsive span,
+.navigation-bar-responsive p {
+  font-family: $sans;
+}
+
+.main-container {
+  background-color: var(--t-bg) !important;
+  color: var(--t-text);
+}
+
+.main-container p,
+.main-container a,
+.main-container label,
+.main-container h1,
+.main-container h2,
+.main-container h3,
+.main-container h4,
+.main-container h5 {
+  color: var(--t-text);
+}
+
+.main-container h1,
+.main-container h2,
+.main-container h3,
+.main-container h4 {
+  font-family: $sans;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+.main-container p {
+  text-wrap: pretty;
+}
+
+// Section titles
+.skills-container > h1,
+.items-container > h1,
+.projects-container > h1,
+.carousel-header > h1,
+.contact_wrapper > h1 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  letter-spacing: -0.02em;
+  margin: 6px 0 32px;
+}
+
+.main-container a:hover {
+  color: var(--t-accent);
+}
+
+code {
+  font-family: $mono !important;
+}
+
+// ── Label face ───────────────────────────────────────────────────────────
+.lab {
+  font-family: $label;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--t-muted);
+  display: inline-block;
+}
+.lab-accent {
+  color: var(--t-accent);
+}
+.mono-note {
+  font-family: $mono;
+  font-size: 12px;
+  color: var(--t-muted);
+}
+
+// ── Navigation ───────────────────────────────────────────────────────────
+.navigation-bar,
+.main-container .navigation-bar {
+  background-color: var(--t-bg) !important;
+  border-bottom: 1px solid var(--t-divider);
+
+  button {
+    font-family: $label !important;
+    font-weight: 600;
+    font-size: 13px !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase !important;
+    color: var(--t-text) !important;
+    border-radius: 0;
+
+    &:hover {
+      color: var(--t-accent) !important;
+      background: transparent;
+    }
+  }
+
+  svg {
+    color: var(--t-text);
+  }
+}
+.navbar-fixed-top {
+  box-shadow: none !important;
+}
+
+.navigation-bar-responsive {
+  span,
+  p {
+    font-family: $label;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
+
+// ── Hero ─────────────────────────────────────────────────────────────────
+.about-section .content {
+  h1 {
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin-bottom: 14px !important;
+  }
+
+  p.typewriter-container {
+    font-family: $label;
+    font-weight: 600;
+    font-size: 1.15em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--t-muted);
+  }
+
+  .social_icons,
+  .mobile_social_icons {
+    margin-bottom: 18px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--t-divider);
+      background: var(--t-bg);
+      width: 44px;
+      height: 44px;
+      transition: border-color 0.14s, color 0.14s;
+
+      &:hover {
+        border-color: var(--t-accent);
+      }
+    }
+
+    svg {
+      font-size: 1.3em !important;
+      color: var(--t-text);
+    }
+  }
+
+  // Bio card: hairline box with blueprint corners
+  .bio-summary {
+    position: relative;
+    border: 1px solid var(--t-divider);
+    background: color-mix(in srgb, var(--t-bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    padding: 22px 24px;
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--t-text);
+
+      strong {
+        font-weight: 600;
+      }
+
+      .inline-link {
+        color: var(--t-accent);
+        font-weight: 600;
+        min-height: 0;
+        min-width: 0;
+        border-bottom: 1px solid currentColor;
+      }
+
+      em {
+        color: var(--t-muted);
+      }
+    }
+  }
+}
+
+.about-section .image-wrapper .brain-icon {
+  color: var(--t-text) !important;
+}
+
+// ── Expertise: Floqer-style lattice of hairline cells ────────────────────
+.skills-container .skills-grid {
+  gap: 1px !important;
+  grid-gap: 1px !important;
+  background: var(--t-divider);
+  border: 1px solid var(--t-divider);
+}
+
+.skills-container .skills-grid .skill {
+  background: var(--t-bg);
+  padding: 32px;
+
+  svg {
+    color: var(--t-accent) !important;
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 19px;
+    letter-spacing: -0.012em;
+    margin: 18px 0 10px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--t-muted);
+  }
+}
+
+.flex-chips .chip-title {
+  font-family: $label;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--t-muted) !important;
+}
+
+.main-container .chip,
+.main-container .flex-chips .MuiChip-root {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  border: 1px solid var(--t-divider) !important;
+  box-shadow: none !important;
+  height: 26px !important;
+  margin: 0 6px 6px 0;
+
+  span {
+    font-family: $mono !important;
+    font-size: 12px;
+    color: var(--t-text) !important;
+  }
+}
+
+// ── Timeline: square hairline boxes ──────────────────────────────────────
+.main-container .vertical-timeline::before {
+  background-color: var(--t-divider) !important;
+  width: 1px;
+}
+
+.main-container .vertical-timeline-element-content {
+  background: var(--t-bg) !important;
+  color: var(--t-text) !important;
+  border: 1px solid var(--t-divider);
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 22px 24px !important;
+
+  h3 {
+    font-size: 19px;
+    color: var(--t-text) !important;
+  }
+
+  h4 {
+    font-family: $label !important;
+    font-weight: 600;
+    font-size: 13px !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--t-accent) !important;
+    margin-top: 6px;
+  }
+
+  p {
+    font-size: 15px !important;
+    line-height: 1.6;
+    color: var(--t-muted) !important;
+    font-weight: 400 !important;
+  }
+}
+
+.main-container .vertical-timeline-element-content-arrow {
+  border-right-color: var(--t-divider) !important;
+}
+
+.main-container .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px var(--t-bg), 0 0 0 5px var(--t-divider) !important;
+
+  svg {
+    color: #fff !important;
+  }
+}
+
+.main-container .vertical-timeline-element .vertical-timeline-element-date,
+.main-container .vertical-timeline-element-content .vertical-timeline-element-date {
+  font-family: $label !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--t-muted) !important;
+  opacity: 1 !important;
+}
+
+// ── Projects: hairline cards, square images ──────────────────────────────
+.projects-container .projects-grid {
+  gap: 24px !important;
+  grid-gap: 24px !important;
+}
+
+.projects-container .projects-grid .project {
+  border: 1px solid var(--t-divider);
+  padding: 14px 14px 22px;
+  transition: border-color 0.14s;
+
+  &:hover {
+    border-color: var(--t-edge);
+  }
+
+  img {
+    border-radius: 0 !important;
+    border: 1px solid var(--t-divider);
+  }
+
+  .zoom:hover {
+    transform: none;
+  }
+
+  h2 {
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    margin: 16px 6px 8px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--t-muted);
+    margin: 0 6px;
+  }
+}
+
+// Featured project spans the full row, image beside text
+.projects-container .projects-grid .project-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+  border-color: var(--t-accent);
+  padding: 14px;
+
+  .project-featured-body {
+    padding: 12px 18px 12px 0;
+
+    h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      margin: 10px 0 12px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    .project-featured-body {
+      padding: 6px;
+    }
+  }
+}
+
+// ── Contact: square fields, accent button ────────────────────────────────
+.main-container .contact_wrapper p {
+  color: var(--t-muted);
+}
+
+.main-container .contact-form .form-group {
+  label {
+    font-family: $label;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--t-muted);
+  }
+
+  input,
+  textarea {
+    border-radius: 0 !important;
+    border: 1px solid var(--t-edge) !important;
+    background-color: var(--t-bg) !important;
+    color: var(--t-text) !important;
+    font-family: $sans !important;
+
+    &::placeholder {
+      color: var(--t-muted);
+    }
+
+    &:focus,
+    &:hover {
+      border-color: var(--t-accent) !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.main-container .contact-form .submit-button {
+  border-radius: 0;
+  background-color: var(--t-accent-solid);
+  font-family: $sans;
+  font-weight: 600;
+  font-size: 15px;
+  min-height: 46px;
+  color: #fff !important;
+
+  &:hover:not(:disabled) {
+    background-color: #6d28d9;
+    transform: none;
+  }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────
+.main-container footer {
+  border-top: 1px solid var(--t-divider);
+
+  p {
+    font-family: $label;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--t-muted);
+  }
+
+  svg {
+    color: var(--t-text);
+  }
+}
+
+// ── Focus ────────────────────────────────────────────────────────────────
+.main-container button:focus-visible,
+.main-container a:focus-visible,
+.main-container input:focus-visible,
+.main-container textarea:focus-visible {
+  outline: 2px solid var(--t-accent);
+  outline-offset: 2px;
+}

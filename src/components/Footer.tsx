@@ -8,7 +8,7 @@ function Footer() {
     <footer>
       <div>
         <a href="https://github.com/dev-zeph" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-        <a href="www.linkedin.com/in/chizulu-zephaniah-906582308" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+        <a href="https://www.linkedin.com/in/chizulu-zephaniah-906582308" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
       </div>
       <p> Chizulu Zephaniah</p>
     </footer>

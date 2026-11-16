@@ -178,13 +178,14 @@ function Main() {
             </p>
 
             <div className="mobile_social_icons">
-              <a href="https://github.com/yujisatojr" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-              <a href="https://www.linkedin.com/in/yujisato/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+              <a href="https://github.com/dev-zeph" target="_blank" rel="noreferrer"><GitHubIcon/></a>
+              <a href="https://www.linkedin.com/in/chizulu-zephaniah-906582308" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
             </div>
           </div>
 
           <div className="bio-summary">
             <p>
+              I currently work at <strong>Volta</strong> as a software developer, building software for client businesses.<br/><br/>
               I design and build software that helps businesses and communities solve problems. <br/>
               <em>Beyond engineering,</em> I am deeply committed to humanitarian causes, and I write occasionally.<br/> My long-term goal is to use my software development skills to amplify the impact of the non-profit initiatives I lead.
             </p>

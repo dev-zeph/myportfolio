@@ -1,7 +1,7 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
@@ -15,10 +15,34 @@ function Timeline() {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
+            date="May 2026 - Present"
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faShieldHalved} />}
+          >
+            <h3 className="vertical-timeline-element-title">Founder</h3>
+            <h4 className="vertical-timeline-element-subtitle">Trojan</h4>
+            <p>
+              Building Trojan, a security desktop tool that helps startups find vulnerabilities in their codebase. Trojan runs locally, scans code and dependencies for security issues, and uses an AI agent to pen-test running apps and explain what it finds in plain language.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            date="Jul 2026 - Present"
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Software Developer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Volta</h4>
+            <p>
+              Consulting for Volta's client businesses as a software developer. I work with each client to figure out the real problem behind their request, then design and build software that solves it.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Founder and Team Lead.</h3>
@@ -33,7 +57,7 @@ function Timeline() {
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Web Developer</h3>
@@ -47,13 +71,13 @@ function Timeline() {
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Team Lead and Technical Director.</h3>
             <h4 className="vertical-timeline-element-subtitle">Chem-AR</h4>
             <p>
-              Open-source educational software development utilizing Three.js for full-stack implementation. Led team initiatives and mentored junior developers while optimizing user experience. Curreny used by professors at Dalhousie University.
+              Open-source educational software development utilizing Three.js for full-stack implementation. Led team initiatives and mentored junior developers while optimizing user experience. Currently used by professors at Dalhousie University.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -61,7 +85,7 @@ function Timeline() {
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
             date="2025"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Software Developer</h3>
@@ -73,7 +97,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Junior Software Developer</h3>
@@ -85,7 +109,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Sole Software Developer</h3>
@@ -97,7 +121,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2024"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            iconStyle={{ background: '#7c3aed', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Sole Software Developer</h3>

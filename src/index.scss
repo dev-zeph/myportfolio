@@ -349,3 +349,6 @@ input, textarea, select {
     margin: 0 auto;
   }
 }
+
+// Trojan design layer (typography + boxes), loaded last so it wins
+@import './assets/styles/Trojan';

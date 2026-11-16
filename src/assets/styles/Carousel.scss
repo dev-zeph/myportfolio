@@ -1,0 +1,97 @@
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    padding: 5% 5%;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 0;
+    width: 100%;
+  }
+}
+
+.carousel-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+
+  h1 {
+    margin: 0 !important;
+  }
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+
+  button {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--t-edge);
+    border-radius: 0;
+    color: var(--t-text);
+    cursor: pointer;
+    transition: background 0.14s, border-color 0.14s, color 0.14s;
+
+    svg {
+      color: currentColor;
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--t-accent);
+      color: var(--t-accent);
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+}
+
+// Horizontal track, three cards per view on desktop. Padding leaves room
+// for the blueprint corner marks, which sit 6px outside each card.
+.carousel-track {
+  --carousel-gap: 28px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * var(--carousel-gap)) / 3);
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 7px; // snap to the card edge, not past the corner-mark padding
+  scroll-behavior: smooth;
+  padding: 8px 7px;
+  margin: -8px -7px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > * {
+    scroll-snap-align: start;
+  }
+
+  @media (max-width: 1024px) {
+    grid-auto-columns: calc((100% - var(--carousel-gap)) / 2);
+  }
+
+  @media (max-width: 640px) {
+    grid-auto-columns: 86%;
+    --carousel-gap: 18px;
+  }
+}

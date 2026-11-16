@@ -6,6 +6,7 @@ import mock09 from '../assets/images/DCA.png';
 import mock10 from '../assets/images/CHEM-AR.png';
 import DMLS from '../assets/images/DMLS.png';
 import Collana from '../assets/images/Collana.png';
+import TrojanShot from '../assets/images/Trojan.png';
 import '../assets/styles/Project.scss';
 
 
@@ -14,6 +15,14 @@ function Project() {
     <div className="projects-container" id="projects">
         <h1>Selection of My Work</h1>
         <div className="projects-grid">
+            <div className="project project-featured">
+                <a href="https://trojancli.com" target="_blank" rel="noreferrer"><img src={TrojanShot} className="zoom" alt="Trojan scanning a codebase in the terminal" width="100%"/></a>
+                <div className="project-featured-body">
+                    <a href="https://trojancli.com" target="_blank" rel="noreferrer"><h2>Trojan</h2></a>
+                    <p>A security desktop tool that helps startups find vulnerabilities in their codebase. Trojan runs locally so code never leaves the machine, combines static analysis, dependency and secret scanning, and uses an AI agent to pen-test running apps and explain each finding in plain language.</p>
+                    <span className="mono-note">trojancli.com</span>
+                </div>
+            </div>
             <div className="project">
                 <a href="https://www.collana.ca/" target="_blank" rel="noreferrer"><img src={Collana} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://www.collana.ca/" target="_blank" rel="noreferrer"><h2>Collana</h2></a>
