@@ -4,6 +4,76 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import '../assets/styles/Main.scss';
 
+// Typing sequences are static, so they live outside the component;
+// that keeps the animation effects from re-running on every render.
+// Define the name sequence with pauses
+const nameSequence = [
+  { text: 'C', delay: 150 },
+  { text: 'h', delay: 120 },
+  { text: 'i', delay: 100 },
+  { text: 'z', delay: 120 },
+  { text: '', delay: 500 }, // Pause after "Chiz"
+  { text: 'u', delay: 150 },
+  { text: 'l', delay: 120 },
+  { text: 'u', delay: 120 },
+  { text: ' ', delay: 200 },
+  { text: 'Z', delay: 150 },
+  { text: 'e', delay: 120 },
+  { text: 'p', delay: 100 },
+  { text: 'h', delay: 120 },
+  { text: 'a', delay: 100 },
+  { text: 'n', delay: 120 },
+  { text: 'i', delay: 100 },
+  { text: '', delay: 400 }, // Pause after "Zephani"
+  { text: 'a', delay: 150 },
+  { text: 'h', delay: 120 },
+  { text: '.', delay: 200 },
+];
+
+// Define the title sequence
+const titleSequence = [
+  { text: 'H', delay: 150 },
+  { text: 'u', delay: 120 },
+  { text: 'm', delay: 100 },
+  { text: 'a', delay: 120 },
+  { text: 'n', delay: 100 },
+  { text: 'i', delay: 120 },
+  { text: 't', delay: 100 },
+  { text: 'a', delay: 120 },
+  { text: 'r', delay: 100 },
+  { text: 'i', delay: 120 },
+  { text: 'a', delay: 100 },
+  { text: 'n', delay: 120 },
+  { text: ',', delay: 200 },
+  { text: ' ', delay: 150 },
+  { text: 'S', delay: 150 },
+  { text: 'o', delay: 120 },
+  { text: 'f', delay: 100 },
+  { text: 't', delay: 120 },
+  { text: 'w', delay: 100 },
+  { text: 'a', delay: 120 },
+  { text: 'r', delay: 100 },
+  { text: 'e', delay: 120 },
+  { text: ' ', delay: 150 },
+  { text: 'E', delay: 150 },
+  { text: 'n', delay: 120 },
+  { text: 'g', delay: 100 },
+  { text: 'i', delay: 120 },
+  { text: 'n', delay: 100 },
+  { text: 'e', delay: 120 },
+  { text: 'e', delay: 100 },
+  { text: 'r', delay: 120 },
+  { text: ',', delay: 200 },
+  { text: ' ', delay: 150 },
+  { text: 'W', delay: 150 },
+  { text: 'r', delay: 120 },
+  { text: 'i', delay: 100 },
+  { text: 't', delay: 120 },
+  { text: 'e', delay: 100 },
+  { text: 'r', delay: 120 },
+  { text: '.', delay: 200 },
+];
+
 function Main() {
   const [displayedName, setDisplayedName] = useState('');
   const [displayedTitle, setDisplayedTitle] = useState('');
@@ -14,74 +84,6 @@ function Main() {
   const [nameAnimationComplete, setNameAnimationComplete] = useState(false);
   const [titleAnimationComplete, setTitleAnimationComplete] = useState(false);
   
-  // Define the name sequence with pauses
-  const nameSequence = [
-    { text: 'C', delay: 150 },
-    { text: 'h', delay: 120 },
-    { text: 'i', delay: 100 },
-    { text: 'z', delay: 120 },
-    { text: '', delay: 500 }, // Pause after "Chiz"
-    { text: 'u', delay: 150 },
-    { text: 'l', delay: 120 },
-    { text: 'u', delay: 120 },
-    { text: ' ', delay: 200 },
-    { text: 'Z', delay: 150 },
-    { text: 'e', delay: 120 },
-    { text: 'p', delay: 100 },
-    { text: 'h', delay: 120 },
-    { text: 'a', delay: 100 },
-    { text: 'n', delay: 120 },
-    { text: 'i', delay: 100 },
-    { text: '', delay: 400 }, // Pause after "Zephani"
-    { text: 'a', delay: 150 },
-    { text: 'h', delay: 120 },
-    { text: '.', delay: 200 },
-  ];
-
-  // Define the title sequence
-  const titleSequence = [
-    { text: 'H', delay: 150 },
-    { text: 'u', delay: 120 },
-    { text: 'm', delay: 100 },
-    { text: 'a', delay: 120 },
-    { text: 'n', delay: 100 },
-    { text: 'i', delay: 120 },
-    { text: 't', delay: 100 },
-    { text: 'a', delay: 120 },
-    { text: 'r', delay: 100 },
-    { text: 'i', delay: 120 },
-    { text: 'a', delay: 100 },
-    { text: 'n', delay: 120 },
-    { text: ',', delay: 200 },
-    { text: ' ', delay: 150 },
-    { text: 'S', delay: 150 },
-    { text: 'o', delay: 120 },
-    { text: 'f', delay: 100 },
-    { text: 't', delay: 120 },
-    { text: 'w', delay: 100 },
-    { text: 'a', delay: 120 },
-    { text: 'r', delay: 100 },
-    { text: 'e', delay: 120 },
-    { text: ' ', delay: 150 },
-    { text: 'E', delay: 150 },
-    { text: 'n', delay: 120 },
-    { text: 'g', delay: 100 },
-    { text: 'i', delay: 120 },
-    { text: 'n', delay: 100 },
-    { text: 'e', delay: 120 },
-    { text: 'e', delay: 100 },
-    { text: 'r', delay: 120 },
-    { text: ',', delay: 200 },
-    { text: ' ', delay: 150 },
-    { text: 'W', delay: 150 },
-    { text: 'r', delay: 120 },
-    { text: 'i', delay: 100 },
-    { text: 't', delay: 120 },
-    { text: 'e', delay: 100 },
-    { text: 'r', delay: 120 },
-    { text: '.', delay: 200 },
-  ];
-
   // Name animation effect
   useEffect(() => {
     if (currentNameIndex < nameSequence.length) {
@@ -106,7 +108,7 @@ function Main() {
       
       return () => clearTimeout(titleStartTimer);
     }
-  }, [currentNameIndex, nameSequence]);
+  }, [currentNameIndex]);
 
   // Title animation effect
   useEffect(() => {
@@ -130,7 +132,7 @@ function Main() {
       
       return () => clearTimeout(cursorTimer);
     }
-  }, [currentTitleIndex, titleSequence, nameAnimationComplete]);
+  }, [currentTitleIndex, nameAnimationComplete]);
 
   // Name cursor blinking effect - only while typing
   useEffect(() => {
