@@ -101,3 +101,13 @@
     }
   }
 }
+
+// Phones: swipeable carousel. Cards keep their natural height instead of
+// stretching to the tallest photo.
+.gallery-carousel .carousel-track {
+  align-items: start;
+
+  .moment {
+    margin: 0;
+  }
+}

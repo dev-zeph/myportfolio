@@ -97,3 +97,24 @@
         left: 17.5px !important;
     }
 }
+// Mobile pagination for Career History (arrows above and below the list)
+.timeline-pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    &.timeline-pager-top {
+        margin-bottom: 8px;
+    }
+
+    &.timeline-pager-bottom {
+        margin-top: 8px;
+    }
+
+    .timeline-pager-count {
+        font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+        font-size: 12px;
+        color: var(--t-muted);
+    }
+}

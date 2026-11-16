@@ -501,3 +501,12 @@ code {
   outline: 2px solid var(--t-accent);
   outline-offset: 2px;
 }
+
+// Jumping to a section (nav links, pager arrows) lands below the fixed nav bar
+#expertise, #history, #awards, #gallery, #projects, #contact {
+  scroll-margin-top: 64px;
+
+  @media (max-width: 480px) {
+    scroll-margin-top: 56px;
+  }
+}

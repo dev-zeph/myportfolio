@@ -186,7 +186,10 @@ function Main() {
           </div>
 
           <div className="bio-summary">
-            <p>
+            <p className="bio-short">
+              Software developer at <strong>Volta</strong>, building software that helps businesses and communities solve problems.
+            </p>
+            <p className="bio-full">
               I currently work at <strong>Volta</strong> as a software developer, building software for client businesses.<br/><br/>
               I design and build software that helps businesses and communities solve problems. <br/>
               <em>Beyond engineering,</em> I am deeply committed to humanitarian causes, and I write occasionally.<br/> My long-term goal is to use my software development skills to amplify the impact of the non-profit initiatives I lead.

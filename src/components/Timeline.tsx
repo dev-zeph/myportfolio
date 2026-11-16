@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import useIsMobile from "./useIsMobile";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faShieldHalved, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import '../assets/styles/Carousel.scss';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
 
-function Timeline() {
-  return (
-    <div id="history">
-      <div className="items-container">
-        <h1>Career History</h1>
-        
-        <VerticalTimeline>
+const PER_PAGE_MOBILE = 3;
+
+// Career entries, newest first.
+const entries = (
+  <>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="May 2026 - Present"
@@ -130,7 +130,48 @@ function Timeline() {
               Engineered Python-based revenue forecasting platform implementing multiple time series prediction models with comprehensive data analysis capabilities.
             </p>
           </VerticalTimelineElement>
+  </>
+);
+
+function Timeline() {
+  const isMobile = useIsMobile();
+  const [page, setPage] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const all = React.Children.toArray(entries.props.children);
+  const pages = Math.ceil(all.length / PER_PAGE_MOBILE);
+  const shown = isMobile ? all.slice(page * PER_PAGE_MOBILE, (page + 1) * PER_PAGE_MOBILE) : all;
+
+  const go = (next: number) => {
+    setPage(next);
+    // Bottom arrows: bring the top of the section back into view
+    const el = sectionRef.current;
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const arrows = (where: string) => (
+    <div className={`timeline-pager timeline-pager-${where}`}>
+      <span className="timeline-pager-count">{page + 1} / {pages}</span>
+      <div className="carousel-arrows">
+        <button type="button" aria-label="Previous roles" onClick={() => go(page - 1)} disabled={page === 0}>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <button type="button" aria-label="Next roles" onClick={() => go(page + 1)} disabled={page === pages - 1}>
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
+    </div>
+  );
+
+  return (
+    <div id="history" ref={sectionRef}>
+      <div className="items-container">
+        <h1>Career History</h1>
+        {isMobile && pages > 1 && arrows('top')}
+        <VerticalTimeline key={isMobile ? page : 'all'}>
+          {shown}
         </VerticalTimeline>
+        {isMobile && pages > 1 && arrows('bottom')}
       </div>
     </div>
   );

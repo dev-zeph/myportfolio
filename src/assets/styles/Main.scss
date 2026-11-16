@@ -383,3 +383,21 @@
         }
     }
 }
+// One-sentence bio on phones and tablets; the full bio on wider screens
+.about-section .content .bio-summary {
+    .bio-short {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .bio-short {
+            display: block;
+            text-align: left !important;
+            font-size: 1rem !important;
+        }
+
+        .bio-full {
+            display: none;
+        }
+    }
+}

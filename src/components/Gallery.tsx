@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../assets/styles/Carousel.scss';
+import Carousel from './Carousel';
+import useIsMobile from './useIsMobile';
 import media1 from '../assets/images/gallery/media1.jpg';
 import media2 from '../assets/images/gallery/media2.jpg';
 import media3 from '../assets/images/gallery/media3.jpg';
@@ -108,7 +110,21 @@ const moments: Moment[] = [
 
 const PER_PAGE = 6;
 
+const renderMoment = (m: Moment) => (
+  <figure className={`moment${m.small ? ' moment-small' : ''}`} key={m.title}>
+    <div className="moment-media">
+      <img src={m.src} alt={m.alt} loading="lazy" />
+    </div>
+    <figcaption>
+      <h3>{m.title}</h3>
+      <span className="moment-meta">{m.meta}</span>
+      <p>{m.story}</p>
+    </figcaption>
+  </figure>
+);
+
 function Gallery() {
+  const isMobile = useIsMobile();
   const [page, setPage] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   const pages = Math.ceil(moments.length / PER_PAGE);
@@ -122,6 +138,15 @@ function Gallery() {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Phones: one photo per view, swipe or use the arrows
+  if (isMobile) {
+    return (
+      <Carousel id="gallery" title="Gallery" label="photos" className="gallery-carousel">
+        {moments.map(renderMoment)}
+      </Carousel>
+    );
+  }
 
   return (
     <div className="gallery-container" id="gallery" ref={sectionRef}>
@@ -139,18 +164,7 @@ function Gallery() {
         )}
       </div>
       <div className="gallery-grid" key={page}>
-        {shown.map((m) => (
-          <figure className={`moment${m.small ? ' moment-small' : ''}`} key={m.title}>
-            <div className="moment-media">
-              <img src={m.src} alt={m.alt} loading="lazy" />
-            </div>
-            <figcaption>
-              <h3>{m.title}</h3>
-              <span className="moment-meta">{m.meta}</span>
-              <p>{m.story}</p>
-            </figcaption>
-          </figure>
-        ))}
+        {shown.map(renderMoment)}
       </div>
     </div>
   );
